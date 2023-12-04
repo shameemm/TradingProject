@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<form class='m-6' action='' method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Upload CSV</label>
+      <input type="file" class="form-control"  name='csv_file' accept=".csv" required >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">TimeFrame (in minutes)</label>
+      <input type="number" name="timeframe" required class="form-control" >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock content %}
